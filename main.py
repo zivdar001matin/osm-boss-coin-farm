@@ -23,7 +23,8 @@ class SeleniumDriver(object):
 
     ):
         options = Options()
-        # options.add_argument("--headless")
+        options.add_argument("--headless")
+        options.add_argument("--mute-audio")
         self.cookies_file_path = cookies_file_path
         self.cookies_websites = cookies_websites
         self.driver = webdriver.Firefox(options=options)
@@ -109,7 +110,7 @@ def watch_free_video(driver):
         video_button.click()
         time.sleep(40)
     except Exception as e:
-        print(e)
+        # print(e)
         pass
     try:
         driver.get("https://en.onlinesoccermanager.com/BusinessClub")
@@ -124,7 +125,7 @@ def watch_free_video(driver):
         video_button.click()
         time.sleep(40)
     except Exception as e:
-        print(e)
+        # print(e)
         pass
 
 if __name__ == '__main__':
@@ -149,7 +150,7 @@ if __name__ == '__main__':
                 if counter == 0:
                     counter = 5
                     print(f'went to sleep: {datetime.datetime.now()}')
-                    time.sleep(51*60)
+                    time.sleep(55*60)
                     print(f'woke up at: {datetime.datetime.now()}')
                 continue
         except Exception as e:
